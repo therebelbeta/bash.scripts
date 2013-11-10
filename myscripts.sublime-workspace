@@ -1,0 +1,297 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "#!/usr/bin/env bash\n# Shell script to create new Database\n# REQUIRES ROOT MySQL ACCESS\n# Author: trentoswald@therebelrobot.com\n \nMyUSER=$1     							# USERNAME\necho \"Root MySQL password:\"\nread -s MyPASS       				# PASSWORD \necho \"MySQL host:\"\nread MyHOST        					# Hostname\necho \"New Database:\"\nread NEWDB       	 					# db \necho \"New MySQL User:\"\nread NEWUSER        				# user\nNEWPASS=\"$(tr -dc A-Za-z0-9_ < /dev/urandom | head -c 16 | xargs)\"\n# Linux bin paths, change this if it can not be autodetected via which command\nMYSQL=\"$(which mysql)\"\nCHOWN=\"$(which chown)\"\nCHMOD=\"$(which chmod)\"\n# Get hostname\nHOST=\"$(hostname)\"\n# Run MySQL commands\n$MYSQL -u $MyUSER -h $MyHOST --password=$MyPASS -Bse \"CREATE USER '$NEWUSER'@'$MyHOST' IDENTIFIED BY '$NEWPASS'\"\n$MYSQL -u $MyUSER -h $MyHOST --password=$MyPASS -Bse \"CREATE DATABASE $NEWDB\"\n$MYSQL -u $MyUSER -h $MyHOST --password=$MyPASS -Bse \"GRANT ALL PRIVILEGES ON $NEWDB.* TO '$NEWUSER'@'$MyHOST'\"\necho \"$NEWUSER has been successfully created.\"\necho \"Password: $NEWPASS\"\necho \"Please copy this password down and store in a safe location.\"\necho \"IT IS NOT RETRIEVABLE.\"",
+			"file": "newDB.sh",
+			"file_size": 1127,
+			"file_write_time": 1383957447000000,
+			"settings":
+			{
+				"buffer_size": 1128,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "newwordpress.sh",
+			"settings":
+			{
+				"buffer_size": 281,
+				"line_ending": "Unix",
+				"name": "#!/usr/bin/env bash"
+			}
+		},
+		{
+			"file": "/home/therebelrobot/.bashrc",
+			"settings":
+			{
+				"buffer_size": 9815,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 117.0,
+		"selected_items":
+		[
+			[
+				"indent",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"inden",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet:",
+				"Snippet: Angular.js"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: instal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 139.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/therebelrobot/bin/testeof.sh",
+		"/home/therebelrobot/git/personal/releasenamer-node/.git/COMMIT_EDITMSG",
+		"/home/therebelrobot/git/personal/releasenamer-node/Gruntfile.js",
+		"/home/therebelrobot/git/personal/10-2013-therebelrobot.com/.git/COMMIT_EDITMSG",
+		"/home/therebelrobot/git/personal/10-2013-therebelrobot.com/app/templates/states/main.html",
+		"/home/therebelrobot/git/personal/10-2013-therebelrobot.com/app/js/app.js",
+		"/home/therebelrobot/git/personal/10-2013-therebelrobot.com/app/less/states/main.less",
+		"/home/therebelrobot/git/personal/10-2013-therebelrobot.com/app/less/main.less",
+		"/home/therebelrobot/git/personal/10-2013-therebelrobot.com/app/less/states/contact.less",
+		"/home/therebelrobot/git/personal/10-2013-therebelrobot.com/app/less/states/projects.less",
+		"/home/therebelrobot/git/personal/10-2013-therebelrobot.com/app/templates/states/projects.html",
+		"/home/therebelrobot/git/personal/10-2013-therebelrobot.com/app/templates/states/contact.html",
+		"/home/therebelrobot/git/personal/10-2013-therebelrobot.com/app/js/controllers/stack.js",
+		"/home/therebelrobot/git/personal/10-2013-therebelrobot.com/app/js/controllers/projects.js",
+		"/home/therebelrobot/git/personal/10-2013-therebelrobot.com/app/js/controllers/contact.js",
+		"/home/therebelrobot/git/personal/10-2013-therebelrobot.com/app/less/parking.less",
+		"/home/therebelrobot/git/personal/10-2013-therebelrobot.com/app/templates/states/about.html",
+		"/home/therebelrobot/git/personal/10-2013-therebelrobot.com/app/less/states.less",
+		"/home/therebelrobot/git/personal/10-2013-therebelrobot.com/app/js/directives/preload.js",
+		"/home/therebelrobot/git/personal/10-2013-therebelrobot.com/app/less/mixins.less",
+		"/home/therebelrobot/git/personal/10-2013-therebelrobot.com/app/less/fonts.less",
+		"/home/therebelrobot/git/rain/school-specialty-p2-reboot/app/js/app.js",
+		"/home/therebelrobot/git/personal/10-2013-therebelrobot.com/app/index.html",
+		"/home/therebelrobot/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+		"/home/therebelrobot/.bashrc"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"filesearch",
+			"'",
+			"stack-html",
+			"5px",
+			"15px",
+			"\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "newDB.sh",
+					"settings":
+					{
+						"buffer_size": 1128,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								330,
+								330
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "newwordpress.sh",
+					"settings":
+					{
+						"buffer_size": 281,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								281,
+								281
+							]
+						],
+						"settings":
+						{
+							"auto_name": "#!/usr/bin/env bash",
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+						},
+						"translation.x": 393.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/therebelrobot/.bashrc",
+					"settings":
+					{
+						"buffer_size": 9815,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9804,
+								9804
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1804.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}
