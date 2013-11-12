@@ -96,6 +96,20 @@ function installnodejs() {
 	cd ~/;
 	rm -rf ~/node-latest-install;
 }
+function installsublime() {
+	sudo add-apt-repository ppa:webupd8team/sublime-text-2;
+	sudo apt-get update;
+	sudo apt-get install sublime-text;
+}
+function installlamp() {
+	sudo apt-get install tasksel;
+	sudo tasksel install lamp-server;
+}
+function installnetflix() {
+	sudo apt-add-repository ppa:ehoover/compholio;
+	sudo apt-get update;
+	sudo apt-get install netflix-desktop;
+}
 function preparesshfs() {
 	CURRENTUSER=$(whoami);
 	sudo apt-get install sshfs;
