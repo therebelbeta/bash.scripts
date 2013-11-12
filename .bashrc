@@ -96,6 +96,14 @@ function installnodejs() {
 	cd ~/;
 	rm -rf ~/node-latest-install;
 }
+function preparesshfs() {
+	CURRENTUSER=$(whoami);
+	sudo apt-get install sshfs;
+	sudo modprobe fuse;
+	sudo adduser $CURRENTUSER fuse;
+	sudo chown root:fuse /dev/fuse;
+	sudo chmod +x /dev/fuse;
+}
 alias killnginx='sudo /etc/init.d/nginx stop && sudo /etc/init.d/apache2 start && sudo /etc/init.d/dnsmasq restart'
 
 export PATH=$HOME/local/bin:$PATH
