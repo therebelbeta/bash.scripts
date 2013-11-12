@@ -103,6 +103,8 @@ function preparesshfs() {
 	sudo adduser $CURRENTUSER fuse;
 	sudo chown root:fuse /dev/fuse;
 	sudo chmod +x /dev/fuse;
+	echo "SSHfs installed."
+	echo "You will need to logout for these changes to take effect.";
 }
 alias killnginx='sudo /etc/init.d/nginx stop && sudo /etc/init.d/apache2 start && sudo /etc/init.d/dnsmasq restart'
 
