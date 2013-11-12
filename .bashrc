@@ -81,7 +81,9 @@ function wiki(){
 function preparenodejs() {
 	sudo apt-get install curl make g++;
 	echo 'export PATH=$HOME/local/bin:$PATH' >> /etc/bash.bashrc;
-	. /etc/bash.bashrc;
+	echo 'export PATH=$HOME/local/bin:$PATH' >> ~/.bashrc;
+	source /etc/bash.bashrc;
+	source ~/.bashrc;
 	mkdir ~/local;
 	mkdir ~/node-latest-install;
 }
@@ -91,6 +93,8 @@ function installnodejs() {
 	./configure --prefix=~/local;
 	make install;
 	curl https://npmjs.org/install.sh | sh;
+	cd ~/;
+	rm -rf ~/node-latest-install;
 }
 alias killnginx='sudo /etc/init.d/nginx stop && sudo /etc/init.d/apache2 start && sudo /etc/init.d/dnsmasq restart'
 
