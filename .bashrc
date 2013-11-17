@@ -32,6 +32,7 @@ alias reload='source ~/.bashrc'
 
 # -- Custom Functions -- #
 
+# the FAIL whale
 command_not_found_handle() { echo E29684E29688E29688E29688E29688E29688E29688E29688E29688E29688E29688E29688E29688E29688E29688E29684E29690E29688E29684E29684E29684E29684E29688E2968C0D0AE29688E29688E29688E29688E29688E29688E2968CE29684E2968CE29684E29690E29690E2968CE29688E29688E29688E2968CE29680E29680E29688E29688E29680E296800D0AE29688E29688E29688E29688E29684E29688E2968CE29684E2968CE29684E29690E29690E2968CE29680E29688E29688E29688E29684E29684E29688E2968C0D0AE29684E29684E29684E29684E29684E29688E29688E29688E29688E29688E29688E29688E29688E29688E29688E29688E29688E29688E29688E296800D0A | xxd -p -r; }
 
 where() { echo ""; whatis "$@"; echo ""; whereis "$@"; echo ""; which "$@"; echo ""; }
@@ -71,7 +72,8 @@ function restart() {
 }
 alias copyhash='git rev-parse HEAD | xclip -selection clip; echo -n "copied to clipboard: "; git rev-parse HEAD;'
 alias push='git push origin $(git rev-parse --abbrev-ref HEAD)'
-alias pull='git pull origin $(git rev-parse --abbrev-ref HEAD)'
+alias pull='git pull'
+alias commit='git commit -a'
 alias cd..='cd ..'
 alias errors='tail -n 20 /var/log/apache2/error.log'
 function wiki(){

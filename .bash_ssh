@@ -1,0 +1,13 @@
+# This is an alias file for ssh connections, separated out for security
+# Sample function:
+# 
+# function connect() {
+# 	if [ "$@" == "SERVERNAME-ONE" ] ; then
+# 		ssh -i /path/to/pem/file user@yourserver.com;
+# 	elif [ "$@" == "SERVERNAME-TWO" ] ; then
+# 		ssh -i /path/to/pem/file user@yourserver.com;
+# 	# repeat the elif block as many times as you have servers
+# 	else
+# 		echo "no server specified."
+# 	fi
+# }
