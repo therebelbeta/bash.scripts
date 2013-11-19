@@ -25,6 +25,7 @@ alias whois-bgp='whois -h riswhois.ripe.net'
 alias findSymLinks='find ./ -type l'
 alias stat='stat -c "%U  %a  %y  %n"'
 alias defaultphpini='cp -pv /etc/php.ini ~/public_html/php.ini.default'
+alias jump='pushd ~/bin'
 
 alias findHackIframe='find ~/public_html -type f \( -name "*.htm" -o -name "*.html" -o -name "*.php" \) -print0 | xargs -0 grep -Hl "base64_decode" > ~/hack_base64.txt && find ~/public_html -type f \( -name "*.htm" -o -name "*.html" -o -name "*.php" \) -print0 | xargs -0 grep -Hl "iframe" > ~/hack_iframe.txt'
 
@@ -101,6 +102,12 @@ function installnodejs() {
 	curl https://npmjs.org/install.sh | sh;
 	cd ~/;
 	rm -rf ~/node-latest-install;
+}
+function installnpmmods() {
+	npm install grunt-cli -g
+	npm install bower -g
+	npm install yeoman -g
+	npm install nodemon -g
 }
 function installsublime() {
 	sudo add-apt-repository ppa:webupd8team/sublime-text-2;
