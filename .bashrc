@@ -81,6 +81,12 @@ alias sb='git sb'
 alias commit='git commit -a'
 alias cd..='cd ..'
 alias errors='tail -n 20 /var/log/apache2/error.log'
+function bgrun() {
+	echo '----------------' >> ~/nohup.log;
+	date >> ~/nohup.log;
+	echo '----------------' >> ~/nohup.log;
+	nohup '&@' >> ~/nohup.log &
+}
 function wiki(){
 	str="$@"
 	\dig +short txt ${str// /_}.wp.dg.cx
