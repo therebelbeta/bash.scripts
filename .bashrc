@@ -28,7 +28,7 @@ alias defaultphpini='cp -pv /etc/php.ini ~/public_html/php.ini.default'
 
 alias findHackIframe='find ~/public_html -type f \( -name "*.htm" -o -name "*.html" -o -name "*.php" \) -print0 | xargs -0 grep -Hl "base64_decode" > ~/hack_base64.txt && find ~/public_html -type f \( -name "*.htm" -o -name "*.html" -o -name "*.php" \) -print0 | xargs -0 grep -Hl "iframe" > ~/hack_iframe.txt'
 
-alias reload='source ~/.bashrc'
+alias reload='echo "reloading ~/.bashrc...";source ~/.bashrc'
 
 # -- Custom Functions -- #
 
@@ -72,6 +72,9 @@ function restart() {
 }
 alias copyhash='git rev-parse HEAD | xclip -selection clip; echo -n "copied to clipboard: "; git rev-parse HEAD;'
 alias push='git push origin $(git rev-parse --abbrev-ref HEAD)'
+alias pull='git pull'
+alias check='git checkout'
+alias rebase='git rebase'
 alias pull='git pull'
 alias commit='git commit -a'
 alias cd..='cd ..'
