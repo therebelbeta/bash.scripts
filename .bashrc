@@ -85,7 +85,7 @@ function bgrun() {
 	echo '----------------' >> ~/nohup.log;
 	date >> ~/nohup.log;
 	echo '----------------' >> ~/nohup.log;
-	nohup '$@' >> ~/nohup.log &
+	nohup "$@" >> ~/nohup.log &
 }
 function wiki(){
 	str="$@"
