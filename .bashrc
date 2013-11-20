@@ -12,7 +12,7 @@ if [ -f ~/bash.scripts/.git-prompt.sh ]; then
       source ~/bash.scripts/.git-prompt.sh
 fi
 # PS1='[\u@\h \W][\$(__git_ps1)]\$ '
-PS1="\[[\t\]][\u] \w\$(__git_ps1) \$> "
+PS1="\[[\t\]][$(hostname -I | awk '{ print $1 }';)][\u] \w\$(__git_ps1) \$> "
 alias reload='echo "reloading ~/.bashrc...";source ~/.bashrc'
 alias relaod='echo "reloading ~/.bashrc...";source ~/.bashrc'
 
