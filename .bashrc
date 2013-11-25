@@ -85,8 +85,9 @@ alias sb='git sb'
 alias commit='git commit -a'
 
 # Installs
-preparenodejs() { sudo apt-get install curl make g++; sudo nano /etc/environment; echo 'export PATH=$HOME/local/bin:$PATH' >> ~/.bashrc;	source ~/.bashrc;	mkdir ~/local; mkdir ~/node-latest-install; }
-installnodejs() { cd ~/node-latest-install; curl http://nodejs.org/dist/node-latest.tar.gz | tar xz --strip-components=1; ./configure --prefix=~/local; make install; curl https://npmjs.org/install.sh | sh; cd ~/; rm -rf ~/node-latest-install; }
+#preparenodejs() { sudo apt-get install curl make g++; sudo nano /etc/environment; echo 'export PATH=$HOME/local/bin:$PATH' >> ~/.bashrc;	source ~/.bashrc;	mkdir ~/local; mkdir ~/node-latest-install; }
+#installnodejs() { cd ~/node-latest-install; curl http://nodejs.org/dist/node-latest.tar.gz | tar xz --strip-components=1; ./configure --prefix=~/local; make install; curl https://npmjs.org/install.sh | sh; cd ~/; rm -rf ~/node-latest-install; }
+installnodejs()  { sudo apt-get install git curl build-essential libssl-dev; installnvm.sh; reload; nvm install 0.10; }
 installnpmmods() { npm install grunt-cli -g; npm install bower -g; npm install yeoman -g; npm install nodemon -g; }
 installsublime() { sudo add-apt-repository ppa:webupd8team/sublime-text-2;	sudo apt-get update; sudo apt-get install sublime-text; }
 installlamp() { sudo apt-get install tasksel; sudo tasksel install lamp-server; }
