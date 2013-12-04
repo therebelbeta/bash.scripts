@@ -57,7 +57,26 @@ function restart() {
 	fi
 }
 alias killnginx='sudo /etc/init.d/nginx stop && sudo /etc/init.d/apache2 start && sudo /etc/init.d/dnsmasq restart'
-alias errors='tail -n 20 /var/log/apache2/error.log'
+alias killapache='sudo /etc/init.d/apache2 stop && sudo /etc/init.d/nginx start && sudo /etc/init.d/dnsmasq restart'
+ngensite(){
+	sudo ln -s /etc/nginx/sites-available/"$@" /etc/nginx/sites-enabled/"$@"
+}
+ngdissite(){
+	sudo unlink /etc/nginx/sites-enabled/"$@"
+}
+# alias errors='tail -n 20 /var/log/apache2/error.log'
+function errors() {
+	if [ "$@" ] ; then
+		tail -n 20 /var/log/"$@"/error.log
+	else
+		echo 'Apache';
+		tail -n 10 /var/log/apache2/error.log;
+		echo '';
+		echo 'Nginx';
+		tail -n 10 /var/log/nginx/error.log;
+		echo '';
+	fi
+}
 
 # DNS and Network
 alias whois-apnic='whois -h whois.apnic.net'
@@ -85,8 +104,6 @@ alias sb='git sb'
 alias commit='git commit -a'
 
 # Installs
-#preparenodejs() { sudo apt-get install curl make g++; sudo nano /etc/environment; echo 'export PATH=$HOME/local/bin:$PATH' >> ~/.bashrc;	source ~/.bashrc;	mkdir ~/local; mkdir ~/node-latest-install; }
-#installnodejs() { cd ~/node-latest-install; curl http://nodejs.org/dist/node-latest.tar.gz | tar xz --strip-components=1; ./configure --prefix=~/local; make install; curl https://npmjs.org/install.sh | sh; cd ~/; rm -rf ~/node-latest-install; }
 installnodejs()  { sudo apt-get install git curl build-essential libssl-dev; installnvm.sh; reload; sudo nano /etc/environment; nvm install 0.10; }
 installnodemods() { npm install grunt-cli -g; npm install bower -g; npm install yeoman -g; npm install nodemon -g; }
 installsublime() { sudo add-apt-repository ppa:webupd8team/sublime-text-2;	sudo apt-get update; sudo apt-get install sublime-text; }
@@ -104,3 +121,4 @@ export PATH=$HOME/local/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/bin/bash:$PATH
 export PATH=$HOME/bin/python:$PATH
+export PATH=$HOME/.nvm:$PATH
