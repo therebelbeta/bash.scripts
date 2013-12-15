@@ -11,7 +11,7 @@
 			"file": "newwordpress.sh",
 			"settings":
 			{
-				"buffer_size": 281,
+				"buffer_size": 0,
 				"line_ending": "Unix",
 				"name": "#!/usr/bin/env bash"
 			}
@@ -20,7 +20,31 @@
 			"file": "/home/therebelrobot/.bashrc",
 			"settings":
 			{
-				"buffer_size": 9964,
+				"buffer_size": 178,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".bashrc",
+			"settings":
+			{
+				"buffer_size": 6449,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "home.bashrc",
+			"settings":
+			{
+				"buffer_size": 178,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/therebelrobot/.bash_ssh",
+			"settings":
+			{
+				"buffer_size": 670,
 				"line_ending": "Unix"
 			}
 		},
@@ -33,11 +57,24 @@
 			}
 		},
 		{
+			"contents": "",
 			"file": "/home/therebelrobot/Remote/youngmormonfeminists.org/youngmormonfeminists.org/wp-content/themes/bloggy/css/main.css",
+			"file_size": -1,
+			"file_write_time": -1,
 			"settings":
 			{
-				"buffer_size": 57781,
+				"buffer_size": 0,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Package Control Messages\n========================\n\nAngularJS:\n---------\n\n  Hot fix\n  - Resolves an infinite loop that could crop up at times during completions.\n  \n  - Also adds ng-trim added to the list\n",
+			"settings":
+			{
+				"buffer_size": 204,
+				"line_ending": "Unix",
+				"name": "Package Control Messages",
+				"scratch": true
 			}
 		}
 	],
@@ -89,6 +126,7 @@
 	},
 	"file_history":
 	[
+		"/home/therebelrobot/bin/.git/COMMIT_EDITMSG",
 		"/home/therebelrobot/bin/.bashrc",
 		"/home/therebelrobot/Remote/youngmormonfeminists.org/var/www/youngmormonfeminists.org/wp-content/themes/bloggy/css/main.css",
 		"/home/therebelrobot/Remote/youngmormonfeminists.org/var/www/youngmormonfeminists.org/.htaccess",
@@ -168,15 +206,15 @@
 					"file": "newwordpress.sh",
 					"settings":
 					{
-						"buffer_size": 281,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								87,
-								87
+								0,
+								0
 							]
 						],
 						"settings":
@@ -195,15 +233,15 @@
 					"file": "/home/therebelrobot/.bashrc",
 					"settings":
 					{
-						"buffer_size": 9964,
+						"buffer_size": 178,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9023,
-								9023
+								178,
+								178
 							]
 						],
 						"settings":
@@ -212,13 +250,92 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1864.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
+					"file": ".bashrc",
+					"settings":
+					{
+						"buffer_size": 6449,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								347,
+								347
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "home.bashrc",
+					"settings":
+					{
+						"buffer_size": 178,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								178,
+								178
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/therebelrobot/.bash_ssh",
+					"settings":
+					{
+						"buffer_size": 670,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								72,
+								72
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "/home/therebelrobot/Documents/YMF Blog",
 					"settings":
 					{
@@ -245,19 +362,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 6,
 					"file": "/home/therebelrobot/Remote/youngmormonfeminists.org/youngmormonfeminists.org/wp-content/themes/bloggy/css/main.css",
 					"settings":
 					{
-						"buffer_size": 57781,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								57742,
-								57742
+								0,
+								0
 							]
 						],
 						"settings":
@@ -265,7 +382,33 @@
 							"syntax": "Packages/CSS/CSS.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 15369.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"settings":
+					{
+						"buffer_size": 204,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								204,
+								204
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

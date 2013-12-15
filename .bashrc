@@ -56,6 +56,7 @@ function restart() {
 		sudo /etc/init.d/"$@" restart;
 	fi
 }
+function starticecast() { sudo /etc/init.d/icecast2 start; ezstream -c "@"mp3.xml; }
 alias killnginx='sudo /etc/init.d/nginx stop && sudo /etc/init.d/apache2 start && sudo /etc/init.d/dnsmasq restart'
 alias errors='tail -n 20 /var/log/apache2/error.log'
 
@@ -92,6 +93,21 @@ installsublime() { sudo add-apt-repository ppa:webupd8team/sublime-text-2;	sudo 
 installlamp() { sudo apt-get install tasksel; sudo tasksel install lamp-server; }
 installnetflix() { sudo apt-add-repository ppa:ehoover/compholio; sudo apt-get update; sudo apt-get install netflix-desktop; }
 preparesshfs() { CURRENTUSER=$(whoami); sudo apt-get install sshfs; sudo modprobe fuse; sudo adduser $CURRENTUSER fuse; sudo chown root:fuse /dev/fuse; sudo chmod +x /dev/fuse; echo "SSHfs installed."; echo "You will need to logout for these changes to take effect."; }
+installicecast(){
+	if [ "$@" == "" ] ; then
+		echo "please include a directory to place the xml config file: /path/to/place/it/";
+	else
+		sudo apt-get update; 
+		sudo apt-get install icecast2 ices2 ezstream build-essential libshout3-dev libmp3lame-dev ; 
+		sudo nano /etc/icecast2/icecast.xml; 
+		sudo nano /etc/default/icecast2; 
+		cp /usr/share/doc/ezstream/examples/ezstream_mp3.xml "@"mp3.xml; 
+		touch "@"playlist.txt; 
+		nano "@"mp3.xml; 
+		nano "@"playlist.txt; 
+	fi
+}
+
 
 # Random Commands
 wallpaper10() { for i in {1..10};do wget $(wget -O- -U "" "http://images.google.com/images?imgsz=xxlarge&hl=en&q=wallpaper+HD&start=$(($RANDOM%900+100))" --quiet | grep -oe 'http://[^"]*\.jpg' | head -1);done; }
