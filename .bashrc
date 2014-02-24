@@ -135,7 +135,7 @@ installnodemods() { npm install gulp -g; npm install bower -g; npm install yeoma
 installsublime() { sudo add-apt-repository ppa:webupd8team/sublime-text-2;	sudo apt-get update; sudo apt-get install sublime-text; }
 installlamp() { sudo apt-get install tasksel; sudo tasksel install lamp-server; }
 installnetflix() { sudo apt-add-repository ppa:ehoover/compholio; sudo apt-get update; sudo apt-get install netflix-desktop; }
-installinvoice() { sudo apt-get install -y texlive; npm install -g invoicer; npm install -g clocker; echo "https://github.com/substack/invoicer"; echo "https://github.com/substack/clocker";echo ""}
+installinvoice() { sudo apt-get install -y texlive; npm install -g invoicer; npm install -g clocker; echo "https://github.com/substack/invoicer"; echo "https://github.com/substack/clocker"; echo ""; }
 preparesshfs() { CURRENTUSER=$(whoami); sudo apt-get install sshfs; sudo modprobe fuse; sudo adduser $CURRENTUSER fuse; sudo chown root:fuse /dev/fuse; sudo chmod +x /dev/fuse; echo "SSHfs installed."; echo "You will need to logout for these changes to take effect."; }
 installicecast(){
 	if [ "$@" == "" ] ; then
