@@ -2,23 +2,45 @@
 # ~/.bashrc
 #
 
+
+
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Colors
+
+if [ -f ~/bin/.bash_colors ]; then
+      source ~/bin/.bash_colors
+fi
+if [ -f ~/bash.scripts/.bash_colors ]; then
+      source ~/bash.scripts/.bash_colors
+fi
+
+#check if SSH'd or sudo'd in
+if [ "$DISPLAY" != "" ]; then
+   User_Color='\e[0;32m'
+else
+   if [ "$SSH_CONNECTION" = "" ]; then
+     User_Color='\e[1;36m'
+   else
+     User_Color='\e[1;91m'
+   fi
+fi
+
+PS1="\[[$Yellow\@\]$Color_Off][$User_Color\H$Color_Off][$User_Color\u$Color_Off] \W \$> "
 if [ -f ~/bin/.git-prompt.sh ]; then
       source ~/bin/.git-prompt.sh
+      PS1="\[[$Yellow\@\]$Color_Off][$User_Color\H$Color_Off][$User_Color\u$Color_Off] \W$BCyan\$(__git_ps1)$Color_Off \$> "
 fi
 if [ -f ~/bash.scripts/.git-prompt.sh ]; then
       source ~/bash.scripts/.git-prompt.sh
+      PS1="\[[$Yellow\@\]$Color_Off][$User_Color\H$Color_Off][$User_Color\u$Color_Off] \W$BCyan\$(__git_ps1)$Color_Off \$> "
 fi
-# PS1='[\u@\h \W][\$(__git_ps1)]\$ '
-PS1="\[[\t\]][$(hostname -I | awk '{ print $1 }';)][\u] \w\$(__git_ps1) \$> "
+
+
 alias reload='echo "reloading ~/.bashrc...";source ~/.bashrc'
 alias relaod='echo "reloading ~/.bashrc...";source ~/.bashrc'
-
-
-# the FAIL whale - when command not found
-command_not_found_handle() { echo E29684E29688E29688E29688E29688E29688E29688E29688E29688E29688E29688E29688E29688E29688E29688E29684E29690E29688E29684E29684E29684E29684E29688E2968C0D0AE29688E29688E29688E29688E29688E29688E2968CE29684E2968CE29684E29690E29690E2968CE29688E29688E29688E2968CE29680E29680E29688E29688E29680E296800D0AE29688E29688E29688E29688E29684E29688E2968CE29684E2968CE29684E29690E29690E2968CE29680E29688E29688E29688E29684E29684E29688E2968C0D0AE29684E29684E29684E29684E29684E29688E29688E29688E29688E29688E29688E29688E29688E29688E29688E29688E29688E29688E29688E296800D0A | xxd -p -r; }
 
 # Navigation
 alias up='cd ..'
@@ -33,6 +55,9 @@ alias ll='ls -l'
 alias findSymLinks='find ./ -type l'
 numcat() { nl "$@"; echo ""; echo "use 'nl $@' instead of numcat"; }
 searchfor() { find ./ -name \*"$3" -print0 | xargs -0 grep -H "$1" ; echo "(find ./ -name \*$3 -print0 | xargs -0 grep -H $1 ;)"; }
+# Colored up cat!
+# You must install Pygments first - "sudo apt-get install python-pygments"
+alias c='pygmentize -O style=monokai -f console256 -g'
 
 # System Support
 alias stat='stat -c "%U  %a  %y  %n"'
@@ -105,8 +130,8 @@ alias sb='git sb'
 alias commit='git commit -a'
 
 # Installs
-installnodejs()  { sudo apt-get install git curl build-essential libssl-dev; installnvm.sh; reload; sudo nano /etc/environment; nvm install 0.10; }
-installnodemods() { npm install grunt-cli -g; npm install bower -g; npm install yeoman -g; npm install nodemon -g; }
+installnodejs()  { sudo apt-get install git curl build-essential libssl-dev; installnvm.sh; reload; nvm install 0.10; nvm use 0.10;}
+installnodemods() { npm install gulp -g; npm install bower -g; npm install yeoman -g; npm install nodemon -g; npm install spot -g; }
 installsublime() { sudo add-apt-repository ppa:webupd8team/sublime-text-2;	sudo apt-get update; sudo apt-get install sublime-text; }
 installlamp() { sudo apt-get install tasksel; sudo tasksel install lamp-server; }
 installnetflix() { sudo apt-add-repository ppa:ehoover/compholio; sudo apt-get update; sudo apt-get install netflix-desktop; }
@@ -138,3 +163,7 @@ export PATH=$HOME/bin:$PATH
 export PATH=$HOME/bin/bash:$PATH
 export PATH=$HOME/bin/python:$PATH
 export PATH=$HOME/.nvm:$PATH
+
+
+#stuff
+alias gonrf='cd ~/git/rain/nrf-com/docroot/sites/all/themes/nrf'

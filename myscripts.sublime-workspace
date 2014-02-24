@@ -8,7 +8,10 @@
 	"buffers":
 	[
 		{
+			"contents": "",
 			"file": "newwordpress.sh",
+			"file_size": -1,
+			"file_write_time": -1,
 			"settings":
 			{
 				"buffer_size": 0,
@@ -20,7 +23,7 @@
 			"file": "/home/therebelrobot/.bashrc",
 			"settings":
 			{
-				"buffer_size": 178,
+				"buffer_size": 236,
 				"line_ending": "Unix"
 			}
 		},
@@ -28,7 +31,7 @@
 			"file": ".bashrc",
 			"settings":
 			{
-				"buffer_size": 6449,
+				"buffer_size": 7233,
 				"line_ending": "Unix"
 			}
 		},
@@ -36,7 +39,7 @@
 			"file": "home.bashrc",
 			"settings":
 			{
-				"buffer_size": 178,
+				"buffer_size": 235,
 				"line_ending": "Unix"
 			}
 		},
@@ -44,15 +47,18 @@
 			"file": "/home/therebelrobot/.bash_ssh",
 			"settings":
 			{
-				"buffer_size": 670,
+				"buffer_size": 1103,
 				"line_ending": "Unix"
 			}
 		},
 		{
+			"contents": "",
 			"file": "/home/therebelrobot/Documents/YMF Blog",
+			"file_size": -1,
+			"file_write_time": -1,
 			"settings":
 			{
-				"buffer_size": 907,
+				"buffer_size": 0,
 				"line_ending": "Unix"
 			}
 		},
@@ -198,7 +204,6 @@
 	"groups":
 	[
 		{
-			"selected": 3,
 			"sheets":
 			[
 				{
@@ -233,15 +238,15 @@
 					"file": "/home/therebelrobot/.bashrc",
 					"settings":
 					{
-						"buffer_size": 178,
+						"buffer_size": 236,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								178,
-								178
+								0,
+								0
 							]
 						],
 						"settings":
@@ -260,15 +265,15 @@
 					"file": ".bashrc",
 					"settings":
 					{
-						"buffer_size": 6449,
+						"buffer_size": 7233,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								347,
-								347
+								1,
+								1
 							]
 						],
 						"settings":
@@ -287,15 +292,15 @@
 					"file": "home.bashrc",
 					"settings":
 					{
-						"buffer_size": 178,
+						"buffer_size": 235,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								178,
-								178
+								124,
+								124
 							]
 						],
 						"settings":
@@ -313,15 +318,15 @@
 					"file": "/home/therebelrobot/.bash_ssh",
 					"settings":
 					{
-						"buffer_size": 670,
+						"buffer_size": 1103,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								72,
-								72
+								0,
+								0
 							]
 						],
 						"settings":
@@ -339,15 +344,15 @@
 					"file": "/home/therebelrobot/Documents/YMF Blog",
 					"settings":
 					{
-						"buffer_size": 907,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								376,
-								376
+								0,
+								0
 							]
 						],
 						"settings":
