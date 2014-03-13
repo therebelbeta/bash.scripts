@@ -37,13 +37,12 @@ if [ -f ~/bash.scripts/.git-prompt.sh ]; then
       source ~/bash.scripts/.git-prompt.sh
       PS1="\[[$Yellow\@\]$Color_Off][$User_Color\H$Color_Off][$User_Color\u$Color_Off] \W$BCyan\$(__git_ps1)$Color_Off \$> "
 fi
-COLUMNS=250
+# COLUMNS=250
 
 alias reload='echo "reloading ~/.bashrc...";source ~/.bashrc'
 alias relaod='echo "reloading ~/.bashrc...";source ~/.bashrc'
 
 # Navigation
-alias up='cd ..'
 alias home='cd ~/'
 alias root='cd /'
 alias jump='pushd ~/bin'
@@ -132,8 +131,10 @@ alias commit='git commit -a'
 # Installs
 installnodejs()  { sudo apt-get install git curl build-essential libssl-dev; installnvm.sh; reload; nvm install 0.10; nvm use 0.10;}
 installnodemods() { npm install gulp -g; npm install bower -g; npm install yeoman -g; npm install nodemon -g; npm install spot -g; }
-installsublime() { sudo add-apt-repository ppa:webupd8team/sublime-text-2;	sudo apt-get update; sudo apt-get install sublime-text; }
+installsublime() { sudo add-apt-repository ppa:webupd8team/sublime-text-3;	sudo apt-get update; sudo apt-get install sublime-text-installer; }
 installlamp() { sudo apt-get install tasksel; sudo tasksel install lamp-server; }
+installnginx() { sudo add-apt-repository ppa:nginx/stable; sudo apt-get update; sudo apt-get install nginx; }
+installphpfpm() { sudo add-apt-repository ppa:brianmercer/php5; sudo apt-get update; sudo apt-get install nginx php5-fpm; }
 installnetflix() { sudo apt-add-repository ppa:ehoover/compholio; sudo apt-get update; sudo apt-get install netflix-desktop; }
 installinvoice() { sudo apt-get install -y texlive; npm install -g invoicer; npm install -g clocker; echo "https://github.com/substack/invoicer"; echo "https://github.com/substack/clocker"; echo ""; }
 preparesshfs() { CURRENTUSER=$(whoami); sudo apt-get install sshfs; sudo modprobe fuse; sudo adduser $CURRENTUSER fuse; sudo chown root:fuse /dev/fuse; sudo chmod +x /dev/fuse; echo "SSHfs installed."; echo "You will need to logout for these changes to take effect."; }
@@ -151,7 +152,7 @@ installicecast(){
 		nano "@"playlist.txt; 
 	fi
 }
-
+alias disconnect='ssh-keygen -f "~/.ssh/known_hosts" -R'
 
 # Random Commands
 wallpaper10() { for i in {1..10};do wget $(wget -O- -U "" "http://images.google.com/images?imgsz=xxlarge&hl=en&q=wallpaper+HD&start=$(($RANDOM%900+100))" --quiet | grep -oe 'http://[^"]*\.jpg' | head -1);done; }
