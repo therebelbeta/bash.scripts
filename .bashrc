@@ -106,6 +106,11 @@ function errors() {
 		echo '';
 	fi
 }
+setupnrf(){
+	sudo sed -i 's/ServerName new.staging.thisisretail.org/ServerName trent.nrf-dev.mediarain.com/g' /etc/apache2/sites-available/new.staging.thisisretail.org
+	restart apache2;
+	sudo chown -R ubuntu:ubuntu /var/www/new.staging.thisisretail.org/new.staging.thisisretail.org/docroot/sites/all/themes/nrf/
+}
 
 # DNS and Network
 alias whois-apnic='whois -h whois.apnic.net'
