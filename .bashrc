@@ -28,14 +28,14 @@ else
    fi
 fi
 
-PS1="\[[$Yellow\@\]$Color_Off][$User_Color\H$Color_Off][$User_Color\u$Color_Off] \W \$> "
+PS1=$"\[[$Yellow\@\]$Color_Off][$User_Color\H$Color_Off][$User_Color\u$Color_Off] \W \$> "
 if [ -f ~/bin/.git-prompt.sh ]; then
       source ~/bin/.git-prompt.sh
-      PS1="\[[$Yellow\@\]$Color_Off][$User_Color\H$Color_Off][$User_Color\u$Color_Off] \W$BCyan\$(__git_ps1)$Color_Off \$> "
+      PS1=$"\[[$Yellow\@\]$Color_Off][$User_Color\H$Color_Off][$User_Color\u$Color_Off] \W$BCyan\$(__git_ps1)$Color_Off \$> "
 fi
 if [ -f ~/bash.scripts/.git-prompt.sh ]; then
       source ~/bash.scripts/.git-prompt.sh
-      PS1="\[[$Yellow\@\]$Color_Off][$User_Color\H$Color_Off][$User_Color\u$Color_Off] \W$BCyan\$(__git_ps1)$Color_Off \$> "
+      PS1=$"\[[$Yellow\@\]$Color_Off][$User_Color\H$Color_Off][$User_Color\u$Color_Off] \W$BCyan\$(__git_ps1)$Color_Off \$> "
 fi
 # COLUMNS=250
 
