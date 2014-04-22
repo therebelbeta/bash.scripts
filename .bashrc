@@ -109,7 +109,7 @@ function errors() {
 setupnrf(){
 	sudo sed -i 's/ServerName new.staging.thisisretail.org/ServerName trent.nrf-dev.mediarain.com/g' /etc/apache2/sites-available/new.staging.thisisretail.org
 	restart apache2;
-	sudo chown -R ubuntu:ubuntu /var/www/new.staging.thisisretail.org/new.staging.thisisretail.org/docroot/sites/all/themes/nrf/css
+	sudo chown -R ubuntu:ubuntu /var/www/new.staging.thisisretail.org/new.staging.thisisretail.org/docroot
 }
 
 # DNS and Network
